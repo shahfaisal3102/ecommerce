@@ -1,0 +1,4 @@
+import { Badge, Button, Image, Modal, SimpleGrid, Stack, Text, Title } from '@mantine/core'
+import type { Product } from './data'
+type Props={product:Product|null;onClose:()=>void;onAdd:(p:Product)=>void}
+export default function ProductModal({product,onClose,onAdd}:Props){return <Modal opened={!!product} onClose={onClose} title="Product details" centered>{product&&<SimpleGrid cols={{base:1,sm:2}}><Image src={product.image} h={260} radius="sm"/><Stack justify="center"><Badge color="gray" w="fit-content">{product.tag}</Badge><Title order={3}>{product.name}</Title><Text size="lg" fw={800}>${product.price.toFixed(2)}</Text><Text size="sm" c="dimmed">Premium everyday sneakers designed for comfort, movement and a clean modern look.</Text><Button color="#6e5337" onClick={()=>{onAdd(product);onClose()}}>Add to cart</Button></Stack></SimpleGrid>}</Modal>}
