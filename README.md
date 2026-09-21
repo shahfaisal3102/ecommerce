@@ -28,3 +28,6 @@ src/
 ```
 
 Run with `npm install` then `npm run dev`.
+
+
+[Check it here](https://ecommerce-site-virid-psi.vercel.app/)
